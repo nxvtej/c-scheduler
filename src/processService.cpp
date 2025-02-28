@@ -35,6 +35,7 @@ std::vector<Process *> extractProcessFromJSON(const std::string &filePath)
         process->pid = processInfo["pid"];
         process->vRunTime = processInfo["vRunTime"];
         process->cpuBurstTime = processInfo["cpuBurstTime"];
+        process->processState.counter = processInfo["processState"]["counter"];
         process->priority = processInfo["priority"];
         process->processNature = getProcessNature(processInfo["processNature"]);
         processes.push_back(process);
